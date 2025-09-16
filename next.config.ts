@@ -14,12 +14,7 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
-      {
-        protocol: "https",
-        hostname: "blob.v0.app",
-        port: "",
-        pathname: "/**",
-      },
+      
     ],
     unoptimized: true,
   },

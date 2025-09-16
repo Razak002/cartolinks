@@ -27,7 +27,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <div className="rounded-sm flex items-center justify-center">
             <Image
-              src={theme === "dark" ? "/images/logoB.png" : "/images/logoA.png"}
+              src={theme === "dark" ? "/images/logoB.webp" : "/images/logoA.webp"}
               alt="logo"
               width={50}
               height={50}

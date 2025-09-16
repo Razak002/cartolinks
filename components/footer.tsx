@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex items-center gap-2">
           <div className="flex items-center justify-center">
             <Image
-              src="/images/rmbg2.png"
+              src="/images/rmbg2.webp"
               alt="logo"
               width={200}
               height={200}
@@ -19,7 +19,7 @@ export function Footer() {
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <span className="font-semibold text-lg text-mute">curated by</span>
           <Image
-            src="/images/mob.png"
+            src="/images/mob.webp"
             alt="curated by logo"
             width={200}
             height={200}

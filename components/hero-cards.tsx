@@ -6,14 +6,14 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 
 const cardImages = [
-  "/images/wan.png",
-  "images/open.png",
-  "images/land.png",
-  "images/source.png",
-  "images/brush.png",
-  "images/generate.png",
-  "images/code.png",
-  "images/whisky.png",
+  "/images/wan.webp",
+  "images/open.webp",
+  "images/land.webp",
+  "images/source.webp",
+  "images/brush.webp",
+  "images/generate.webp",
+  "images/code.webp",
+  "images/whisky.webp",
 ]
 
 export function HeroCards() {
@@ -56,7 +56,7 @@ export function HeroCards() {
         <div
           className="flex transition-transform duration-300 ease-in-out gap-6"
           style={{
-            transform: `translateX(-${currentIndex * (420 + 24)}px)`, 
+            transform: `translateX(-${currentIndex * (420 + 24)}px)`,
           }}
         >
           {cardImages.map((image, index) => (
@@ -64,7 +64,11 @@ export function HeroCards() {
               key={index}
               className="relative min-w-[700px] h-[400px] rounded-xl overflow-hidden border border-border flex-shrink-0"
             >
-              <Image src={image || "/placeholder.svg"} alt={`Card ${index + 1}`} fill className="object-fill" />
+              <Image src={image || "/placeholder.svg"}
+                alt={`Card ${index + 1}`}
+                fill className="object-fill"
+                priority
+              />
             </div>
           ))}
         </div>
@@ -98,9 +102,8 @@ export function HeroCards() {
           {Array.from({ length: totalSlides }).map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                index === currentIndex ? "bg-gray-500" : "bg-gray-200 hover:bg-gray-100"
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentIndex ? "bg-gray-500" : "bg-gray-200 hover:bg-gray-100"
+                }`}
               onClick={() => setCurrentIndex(index)}
               aria-label={`Go to slide ${index + 1}`}
             />
