@@ -18,6 +18,7 @@ import { BsCardImage } from "react-icons/bs"
 import Image from "next/image"
 import { useTheme } from "next-themes"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 export function Header() {
   const { theme } = useTheme()
@@ -51,20 +52,22 @@ export function Header() {
         className="flex items-center gap-4"
       >
         <div className="flex items-center gap-2">
-          <motion.div
-            whileHover={{ scale: 1.05, rotate: 3 }}
-            transition={{ type: "spring", stiffness: 200 }}
-            className="rounded-sm flex items-center justify-center"
-          >
-            <Image
-              src={theme === "dark" ? "/images/logoB.webp" : "/images/logoA.webp"}
-              alt="logo"
-              width={64}
-              height={64}
-              priority
-              className="md:w-[50px] md:h-[50px]"
-            />
-          </motion.div>
+          <Link href={'/'}>
+            <motion.div
+              whileHover={{ scale: 1.05, rotate: 3 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="rounded-sm flex items-center justify-center"
+            >
+              <Image
+                src={theme === "dark" ? "/images/logoB.webp" : "/images/logoA.webp"}
+                alt="logo"
+                width={64}
+                height={64}
+                priority
+                className="md:w-[50px] md:h-[50px]"
+              />
+            </motion.div>
+          </Link>
           <div className="hidden sm:flex items-center gap-2">
             <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gradient-to-b from-pink-400 to-blue-400 dark:from-pink-600 dark:to-blue-600 shadow-md">
               <User className="w-4 h-4 text-white" />
@@ -107,7 +110,7 @@ export function Header() {
         </motion.div>
         <ThemeToggle />
 
-        <div className="md:hidden">
+        <div className="sm:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button
@@ -122,12 +125,11 @@ export function Header() {
               side="left"
               className="w-72 sm:w-80 bg-background text-foreground p-6 flex flex-col"
             >
-              {/* Profile in sheet */}
               <motion.div
                 initial={{ opacity: 0, y: -15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="flex items-center gap-3 mb-8"
+                className="flex items-center gap-3 mb-6"
               >
                 <div className="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-b from-pink-400 to-blue-400 dark:from-pink-600 dark:to-blue-600 shadow-md">
                   <User className="w-6 h-6 text-white" />
@@ -143,7 +145,7 @@ export function Header() {
                   { icon: GoHomeFill, label: "Home" },
                   { icon: BsCardImage, label: "Images" },
                   { icon: FaVideo, label: "Videos" },
-                  { icon: ImMagicWand, label: "Magic" },
+                  { icon: ImMagicWand, label: "Enhance" },
                   { icon: HiMiniPaintBrush, label: "Paint" },
                   { icon: PiPencilCircleDuotone, label: "Draw" },
                   { icon: FaFolder, label: "Folders" },
@@ -162,7 +164,7 @@ export function Header() {
                 ))}
               </nav>
 
-              <div className="my-6 border-t border-border"></div>
+              <div className="my-4 border-t border-border"></div>
               <p className="text-xs font-semibold uppercase text-muted-foreground mb-2">More</p>
 
               <nav className="flex flex-col gap-2">
@@ -181,9 +183,9 @@ export function Header() {
                 ))}
               </nav>
 
-              <div className="mt-auto flex items-center justify-between pt-6 border-t border-border">
+              <div className="mt-auto flex items-center justify-between pt-5 border-t border-border">
                 <ThemeToggle />
-                <p className="text-xs text-muted-foreground">© 2025 PMI</p>
+                <p className="text-xs text-muted-foreground">© 2025 dev_razak</p>
               </div>
             </SheetContent>
           </Sheet>

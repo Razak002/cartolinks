@@ -27,7 +27,6 @@ export function Footer() {
           />
         </motion.div>
 
-        {/* Right Side */}
         <motion.div
           className="flex flex-col md:flex-row items-center gap-2 md:gap-3 text-sm text-muted-foreground"
           initial={{ opacity: 0, x: 30 }}
