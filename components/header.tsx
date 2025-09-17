@@ -43,7 +43,7 @@ export function Header() {
       animate="visible"
       variants={fadeIn}
       transition={{ duration: 0.4 }}
-      className="flex items-center justify-between px-3 py-4 border-b border-border bg-background backdrop-blur-sm sticky top-0 z-50"
+      className="flex items-center justify-between px-2 sm:px-3 sm:py-4 border-b border-border bg-background backdrop-blur-sm sticky top-0 z-50"
     >
       <motion.div
         initial={{ opacity: 0, x: -15 }}
